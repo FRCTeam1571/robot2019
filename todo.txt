@@ -1,0 +1,12 @@
+Drivetrain code - holonomic drive
+Implement command based robot
+Line detection with photosensor
+vision tracking of spacship and rocket targets
+ultrasonic sensor in python to determine distance away
+motor encoder operation and types
+Driverstation with buttons 
+Gyroscope
+Accelerometer
+
+
+
