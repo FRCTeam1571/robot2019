@@ -64,29 +64,24 @@ class MyRobot(wpilib.TimedRobot):
         
     def POVrobot(self):
         POVdegree = self.stick.getPOV(0)
-        string POVdegreeString
- 
+
         int = 8
-        switch (POVdegree) {
-            case 45:  POVdegreeString = "this is up, right";
-                     break;
-            case 90:  POVdegreeString = "This is right";
-                     break;
-            case 135:  POVdegreeString = "This is down right";
-                     break;
-            case 180:  POVdegreeString = "this is down";
-                     break;
-            case 225:  POVdegreeString = "this is down left";
-                     break;
-            case 270:  POVdegreeString = "this is left";
-                     break;
-            case 315:  POVdegreeString = "this is up left";
-                     break;
-            default: POVdegreeString = "this is up or defalt 360";
-                     break;
-        
-        print(POVdegreeString);
-}
+        POVdegreeCases = {
+            0: "this is up or default 360",
+            45: "this is up, right",
+            90: "This is right",
+            135: "This is down right",
+            180: "this is down",
+            225: "this is down left",
+            270: "this is left",
+            315: "this is up left"
+        }
+
+        POVdegreeString = POVdegreeCases.get(POVdegree, "Invalid value")
+        if POVdegree >= 0:    
+            print(POVdegreeString)
+
+
 
 if __name__ == "__main__":
     wpilib.run(MyRobot)
