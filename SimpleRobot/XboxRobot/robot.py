@@ -16,6 +16,39 @@ import datetime
 #!/usr/bin/env python3
 """
     This is a good foundation to build your robot code on
+    
+Methods inherited from class edu.wpi.first.wpilibj.GenericHID
+    getAxisCount, getAxisType, getButtonCount, getName, getPort, getPOV, getPOV, getPOVCount, getRawAxis, getRawButton, getRawButtonPressed, getRawButtonReleased, 
+    getType, getX, getY, setOutput, setOutputs, setRumble
+
+class wpilib.XboxController(port)  : 
+    boolean	getAButton()    Read the value of the A button on the controller.
+    boolean	getAButtonPressed()     Whether the A button was pressed since the last check.
+    boolean	getAButtonReleased()     Whether the A button was released since the last check.
+    boolean	getBackButton()     Read the value of the back button on the controller.
+    boolean	getBackButtonPressed()     Whether the back button was pressed since the last check.
+    boolean	getBackButtonReleased()     Whether the back button was released since the last check.
+    boolean	getBButton()     Read the value of the B button on the controller.
+    boolean	getBButtonPressed()      Whether the B button was pressed since the last check.
+    boolean	getBButtonReleased()     Whether the B button was released since the last check.
+    boolean	getBumper(GenericHID.Hand hand)     Read the value of the bumper button on the controller.
+    boolean	getBumperPressed(GenericHID.Hand hand)      Whether the bumper was pressed since the last check.
+    boolean	getBumperReleased(GenericHID.Hand hand)     Whether the bumper was released since the last check.
+    boolean	getStartButton()     Read the value of the start button on the controller.
+    boolean	getStartButtonPressed()     Whether the start button was pressed since the last check.
+    boolean	getStartButtonReleased()     Whether the start button was released since the last check.
+    boolean	getStickButton(GenericHID.Hand hand)     Read the value of the stick button on the controller.
+    boolean	getStickButtonPressed(GenericHID.Hand hand)     Whether the stick button was pressed since the last check.
+    boolean	getStickButtonReleased(GenericHID.Hand hand)     Whether the stick button was released since the last check.
+    double	getTriggerAxis(GenericHID.Hand hand)     Get the trigger axis value of the controller.
+    double	getX(GenericHID.Hand hand)     Get the X axis value of the controller.
+    boolean	getXButton()     Read the value of the X button on the controller.
+    boolean	getXButtonPressed()     Whether the X button was pressed since the last check.
+    boolean	getXButtonReleased()     Whether the X button was released since the last check.
+    double	getY(GenericHID.Hand hand)     Get the Y axis value of the controller.
+    boolean	getYButton()     Read the value of the Y button on the controller.
+    boolean	getYButtonPressed()     Whether the Y button was pressed since the last check.
+    boolean	getYButtonReleased()     Whether the Y button was released since the last check.
 """
 
 
