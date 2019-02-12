@@ -5,13 +5,22 @@ from wpilib.buttons.joystickbutton import JoystickButton
 
 
 from subsystems.DriveTrainSubsystem import DriveTrain
+from subsystems.arm import ArmSystem
+
+from robotmap import *
 
 class OI():
 
     def __init__(self):
-        self.driverobot = DriveTrain()
+        # self.driveRobot = DriveTrain()
+        self.arm = ArmSystem()
 
         self.joystick = Joystick(0)
+
+        self.upButton = JoystickButton(self.joystick, 6)
+        self.downButton = JoystickButton(self.joystick, 4)
+
+        
 
     def poll(self):
 
@@ -19,4 +28,8 @@ class OI():
         self.yAxis = self.joystick.getY()
         self.zAxis = self.joystick.getZ()
 
-        self.driverobot.drive(self.xAxis, self.yAxis, self.zAxis)
+        # self.driveRobot.drive(self.xAxis, self.yAxis, self.zAxis)
+
+        
+        self.arm.armMove(1.0, self.upButton.get())
+        self.arm.armMove(-1.0, self.downButton.get())

@@ -19,7 +19,7 @@ from networktables import NetworkTables
 
 
 class MyRobot(wpilib.TimedRobot):
-
+ 
     def robotInit(self):
         """
         This function is called upon program startup and
@@ -31,6 +31,8 @@ class MyRobot(wpilib.TimedRobot):
         self.stick = wpilib.Joystick(1)
         self.timer = wpilib.Timer()
 
+        self.motor = wpilib.Talon(0)
+
     def autonomousInit(self):
         """This function is run once each time the robot enters autonomous mode."""
         self.timer.reset()
@@ -40,11 +42,11 @@ class MyRobot(wpilib.TimedRobot):
         """This function is called periodically during autonomous."""
 
         # Drive for two seconds
-        if self.timer.get() < 2.0:
+        if self.timer.get() < 10.0:
             print("Hello World")
-        #    self.drive.arcadeDrive(-0.5, 0)  # Drive forwards at half speed
-        #else:
-        #    self.drive.arcadeDrive(0, 0)  # Stop robot
+            self.motor.set(1.0)
+        else:
+            self.motor.set(0.0)
 
     def teleopPeriodic(self):
         """This function is called periodically during operator control."""

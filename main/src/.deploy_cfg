@@ -1,3 +1,6 @@
+[auth]
+hostname = 172.22.11.2
+
 [ip address]
 radio = 10.15.71.1
 usb = 172.22.11.2
