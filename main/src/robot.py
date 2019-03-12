@@ -1,30 +1,36 @@
 #!/usr/bin/env python3
 
 import wpilib
-from wpilib import command
 from wpilib.command import Command
+from wpilib.command import Scheduler
 from commandbased import CommandBasedRobot
 
 import oi
 
-class Thomas(CommandBasedRobot):
+class NEWO(CommandBasedRobot):
 
     def robotInit(self):
 
         Command.getRobot = lambda x=0: self
 
+        wpilib.CameraServer.launch("vision.py:main")
+
         self.oi = oi.OI()
 
-    def autonomousInit(self):
+    def autonomousPeriodic(self):
+        Scheduler.getInstance().run()
+        self.oi.poll()
         pass
 
     def teleopPeriodic(self):
         # self.disabled = False
-        command.Scheduler.run(self)
+        Scheduler.getInstance().run()
         self.oi.poll()
 
     def disabledPeriodic(self):
-        self.disabled = True
+        pass
+        # self.disabled = True
+
 
 if __name__ == "__main__":
-    wpilib.run(Thomas)
+    wpilib.run(NEWO)

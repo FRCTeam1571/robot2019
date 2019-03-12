@@ -13,10 +13,12 @@ class DriveTrain(Subsystem):
 
         self.frontRightMotor = ctre.wpi_talonsrx.WPI_TalonSRX(frontRightTalonSRX)
         self.rearRightMotor = ctre.wpi_talonsrx.WPI_TalonSRX(rearRightTalonSRX)
-        
+
+        self.gyro = wpilib.ADXRS450_Gyro()
 
         self.mecanumDrive = wpilib.drive.MecanumDrive(
             self.frontLeftMotor, self.rearLeftMotor, self.frontRightMotor, self.rearRightMotor)
 
-    def drive(self, ySpeed, xSpeed, zRotation, gyroAngle=0.0):
+    def drive(self, ySpeed, xSpeed, zRotation, gyroAngle = 0.0):
+        # gyroAngle = self.gyro.getAngle()
         self.mecanumDrive.driveCartesian(ySpeed, xSpeed, zRotation, gyroAngle)
