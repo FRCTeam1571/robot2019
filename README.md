@@ -1,4 +1,5 @@
-# robot2019
+**NEWO** **N**ovel **E**xtending **W**onderful **O**bject
+
 Robot code for FRC 2019 Season "DESTINATION: DEEP SPACE"
 
 ##### Deploy code via USB:
