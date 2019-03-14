@@ -50,9 +50,8 @@ class OI():
 
         self.driveRobot.drive(self.xAxis, self.yAxis, self.zAxis)
 
-        print(self.armUpButton.get())
-        self.arm.armMove(1.0, self.armUpButton.get(), self.stopButton.get())
-        self.arm.armMove(-1.0, self.armDownButton.get(), self.stopButton.get())
+        # print(self.armUpButton.get())
+        self.arm.armMove(0.5, self.armUpButton.get(), self.armDownButton.get())
 
 
         self.armToggle.togglePneumatics(self.armButton.get())

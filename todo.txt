@@ -10,3 +10,15 @@ Accelerometer
 
 
 
+Button up
+Button down
+as long as they are held down go direction
+
+When lowest, go up button only works
+When highest, go down button only works
+Stop anywhere in between
+
+If encoder
+Top, Bottom, Middle presets
+
+.25 speed?

@@ -20,15 +20,13 @@ class ArmSystem(Subsystem):
         self.bendSwitchOne = wpilib.DigitalInput(2)
         self.bendSwitchTwo = wpilib.DigitalInput(3)
 
-    def armMove(self, speed, startButton, stopButton):
-        # print(self.stopSwitch.get())
-        # print(self.topStopSwitch.get(), self.bottomStopSwitch.get())
-        # print(self.bendSwitchOne.get(), self.bendSwitchTwo.get())
-        if self.armTimer.get() == 0 and startButton:
-            self.armTimer.start()
+    def armMove(self, speed, upButton, downButton):
+        if upButton and not self.topStopSwitch.get():
             self.armMotor.set(speed)
-
-        if self.armTimer.hasPeriodPassed(5) or self.bottomStopSwitch.get() or self.topStopSwitch.get() or stopButton:
+        elif downButton and not self.bottomStopSwitch.get():
+            self.armMotor.set(-speed)
+        else:
             self.armMotor.disable()
-            self.armTimer.stop()
-            self.armTimer.reset()
+        
+        
+        
