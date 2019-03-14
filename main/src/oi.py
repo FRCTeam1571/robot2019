@@ -54,6 +54,10 @@ class OI():
         self.arm.armMove(0.5, self.armUpButton.get(), self.armDownButton.get())
 
 
+
+        
+
+
         self.armToggle.togglePneumatics(self.armButton.get())
         self.gripToggle.togglePneumatics(self.gripButton.get())
 

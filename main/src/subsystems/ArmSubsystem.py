@@ -21,7 +21,7 @@ class ArmSystem(Subsystem):
         self.bendSwitchTwo = wpilib.DigitalInput(3)
 
     def armMove(self, speed, upButton, downButton):
-        if upButton and not self.topStopSwitch.get():
+        if upButton and not self.topStopSwitch.get() :
             self.armMotor.set(speed)
         elif downButton and not self.bottomStopSwitch.get():
             self.armMotor.set(-speed)

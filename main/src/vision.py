@@ -7,5 +7,5 @@ def main():
 
     usb1 = cs.startAutomaticCapture(dev=0)
     usb2 = cs.startAutomaticCapture(dev=1)
-
+    print("Camera bois good")
     cs.waitForever()
